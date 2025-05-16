@@ -29,11 +29,11 @@ cfg.secondary_label_weight = 0.5
 cfg.batch_size = 96
 cfg.PRECISION = 32
 cfg.seed = {
-    "pretrain_ce": 20231121,
-    "pretrain_bce": 20230503,
-    "train_ce": 20231019,
-    "train_bce": 20231911,
-    "finetune": 20230523,
+    "pretrain_ce": 20251121,
+    "pretrain_bce": 20250503,
+    "train_ce": 20251019,
+    "train_bce": 20251911,
+    "finetune": 20250523,
 }
 cfg.DURATION_TRAIN = 10
 cfg.DURATION_FINETUNE = 30
