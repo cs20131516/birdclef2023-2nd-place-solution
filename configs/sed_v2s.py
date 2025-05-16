@@ -107,23 +107,23 @@ cfg.am_audio_transforms = amCompose(
         # sed
         AddBackgroundNoise(
             cfg.birdclef2021_nocall + cfg.birdclef2020_nocall,
-            min_snr_in_db=0,
-            max_snr_in_db=3,
+            min_snr_db=0,
+            max_snr_db=3,
             p=0.6,
         ),
         AddBackgroundNoise(
             cfg.freefield + cfg.warblrb + cfg.birdvox,
-            min_snr_in_db=0,
-            max_snr_in_db=3,
+            min_snr_db=0,
+            max_snr_db=3,
             p=0.3,
         ),
         AddBackgroundNoise(
-            cfg.rainforest + cfg.environment, min_snr_in_db=0, max_snr_in_db=3, p=0.4
+            cfg.rainforest + cfg.environment, min_snr_db=0, max_snr_db=3, p=0.4
         ),
         amOneOf(
             [
-                Gain(min_gain_in_db=-15, max_gain_in_db=15, p=0.8),
-                GainTransition(min_gain_in_db=-15, max_gain_in_db=15, p=0.8),
+                Gain(min_gain_db=-15, max_gain_db=15, p=0.8),
+                GainTransition(min_gain_db=-15, max_gain_db=15, p=0.8)
             ],
         ),
     ]

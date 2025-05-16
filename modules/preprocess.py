@@ -45,9 +45,6 @@ def preprocess(cfg):
     # primary_label: fuse the same species with different ebird code: ['grbcam1',  'blkkit3',  'whcshr1', 'barowl8','barowl7','egwtea1','foxsp1','euhgul1']
     df = pd.read_csv(cfg.train_data)
     df['secondary_labels'] = df['secondary_labels'].apply(lambda x: literal_eval(x))
-    df['secondary_labels_2023'] = df['secondary_labels_2023'].apply(lambda x: literal_eval(x))
-    df['secondary_labels_strict'] = df['secondary_labels_strict'].apply(lambda x: literal_eval(x))
-    df['secondary_labels_very_strict'] = df['secondary_labels_very_strict'].apply(lambda x: literal_eval(x))
     df['version'] = df['version'].astype(str)
     df['rating'] = df['rating'].mask(np.isnan(df['rating'].values),df['q'].map({'A':5,'B':4,'C':3,'D':2,'E':1,'no score':0}))
     #df['filename'] = df['id'].apply(lambda x: f'XC{x}')
